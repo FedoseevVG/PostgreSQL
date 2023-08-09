@@ -23,12 +23,12 @@ Welcome! This command will take you through the configuration process.
 Please go to https://oauth.yandex.ru/authorize?response_type=token&client_id=... in order to obtain OAuth token.
 
 Please enter OAuth token: ...
-You have one cloud available: 'cloud-vf1' (id = b1gs02o04r4o0aq927n3). It is going to be used by default.
+You have one cloud available: 'cloud-vf1' (id = ...). It is going to be used by default.
 Please choose folder to use:
- [1] default (id = b1g17etduc7a8cals26t)
+ [1] default (id = ...)
  [2] Create a new folder
 Please enter your numeric choice: 1
-Your current folder has been set to 'default' (id = b1g17etduc7a8cals26t).
+Your current folder has been set to 'default' (id = ...).
 Do you want to configure a default Compute zone? [Y/n] y
 Which zone do you want to use as a profile default?
  [1] ru-central1-a
