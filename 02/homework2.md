@@ -15,6 +15,7 @@ Yandex Cloud CLI 0.108.1 windows/amd64
 Now we have zsh completion. Type "echo 'source C:\Users\fvg00\yandex-cloud\completion.zsh.inc' >>  ~/.zshrc" to install itAdd yc installation dir to your PATH? [Y/n]: y
 PS D:\otus\Postgresql\yc>
 ```
+
 Далее выполняем первоначальный запуск YC (в процессе берем и подставляем ключ по ссылке):
 ```bash
 PS D:\otus\Postgresql\yc> yc init
@@ -38,6 +39,7 @@ Please enter your numeric choice: 1
 Your profile default Compute zone has been set to 'ru-central1-a'.
 PS D:\otus\Postgresql\yc>
 ```
+
 ### Генерим [ssh-key](https://github.com/yandex-cloud/docs/blob/master/ru/compute/operations/serial-console/index.md)
 
 ```bash
@@ -65,6 +67,7 @@ PS D:\otus\Postgresql\yc>
 ```bash
 fvg00:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICSHaiylrjT2WGBfP8e7pXGBNqDcVBAWrAtOT1nqlic6 fvg00@NBH
 ```
+
 ### Создаем ВМ Pg02
 ```bash
 S D:\otus\Postgresql\yc> yc compute instance create --name pg02 --hostname pg02 --create-boot-disk size=15G,type=network-ssd,image-folder-id=standard-images,image-family=ubuntu-2204-lts  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 --zone ru-central1-a  --metadata-from-file ssh-keys=C:\Users\fvg00\.ssh\fvg00.pub
