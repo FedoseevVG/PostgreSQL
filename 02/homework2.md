@@ -20,7 +20,7 @@ PS D:\otus\Postgresql\yc>
 ```bash
 PS D:\otus\Postgresql\yc> yc init
 Welcome! This command will take you through the configuration process.
-Please go to https://oauth.yandex.ru/authorize?response_type=token&client_id=1a6990aa636648e9b2ef855fa7bec2fb in order to obtain OAuth token.
+Please go to https://oauth.yandex.ru/authorize?response_type=token&client_id=... in order to obtain OAuth token.
 
 Please enter OAuth token: ...
 You have one cloud available: 'cloud-vf1' (id = b1gs02o04r4o0aq927n3). It is going to be used by default.
