@@ -70,7 +70,7 @@ fvg00:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICSHaiylrjT2WGBfP8e7pXGBNqDcVBAWrAtOT1
 
 ### Создаем ВМ Pg02
 ```bash
-S D:\otus\Postgresql\yc> yc compute instance create --name pg02 --hostname pg02 --create-boot-disk size=15G,type=network-ssd,image-folder-id=standard-images,image-family=ubuntu-2204-lts  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 --zone ru-central1-a  --metadata-from-file ssh-keys=C:\Users\fvg00\.ssh\fvg00.pub
+PS D:\otus\Postgresql\yc> yc compute instance create --name pg02 --hostname pg02 --create-boot-disk size=15G,type=network-ssd,image-folder-id=standard-images,image-family=ubuntu-2204-lts  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 --zone ru-central1-a  --metadata-from-file ssh-keys=C:\Users\fvg00\.ssh\fvg00.pub
   
 done (57s)
 id: fhmr0cu4aq1v4prajpoj
