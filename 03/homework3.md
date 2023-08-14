@@ -1,4 +1,4 @@
-# Установка PostgreSQL
+# Установка и настройка PostgteSQL в контейнере Docker
 
 ## Создаем ВМ pg01
 ```bash
