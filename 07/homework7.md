@@ -136,7 +136,7 @@ testdb=> select * from testnm.t1;
 ERROR:  permission denied for table t1
 testdb=>
 ```
-<span style="color:red"> **Получили ошибку "ERROR:  permission denied", потому что GRANT SELECT ON ALL TABLES IN SCHEMA testnm TO readonly дал доступ только для существующих на тот момент времени таблиц а t1 пересоздавалась.**</span>
+<span style="color:red"> **Получили ошибку "ERROR:  permission denied", потому что "GRANT SELECT ON ALL TABLES IN SCHEMA testnm TO readonly" дал доступ только для существующих на тот момент времени таблиц, а t1 пересоздавалась.**</span>
 
 ### Пробуем зафиксировать под postgres права на SELECT и пересоздать таблицу 
 ```bash
