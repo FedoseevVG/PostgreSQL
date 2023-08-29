@@ -190,7 +190,7 @@ testdb=> select * from t2;
 
 testdb=>
 ```
-<span style="color:red"> **Причиной отсутствия ошибки является то, что мы создали таблицу в схеме PUBLIC, которая в SEARCH_PATH идет первой по умолчанию. А права на все действия в этой схеме даются роли public, которая, в свою очередь, добавляется всем новым пользователям.**</span>
+<span style="color:red"> **Причиной отсутствия ошибки является то, что мы создали таблицу в схеме PUBLIC, которая в SEARCH_PATH идет первой по умолчанию. А права на все действия в этой схеме даются роли PUBLIC, которая, в свою очередь, добавляется всем новым пользователям.**</span>
 
 ### Заходим под postgres и забираем права у схемы PUBLIC на БД testdb:
 ```bash
@@ -204,6 +204,12 @@ testdb=#
 ```
 ### Снова пробуем под testread создать новую таблицу в testdb:
 ```bash
+ubuntu@pg01:~$ sudo -u postgres psql -U testread -h localhost -W -d testdb
+Password:
+psql (14.9 (Ubuntu 14.9-1.pgdg22.04+1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
 testdb=> create table t3(c1 integer);
 ERROR:  permission denied for schema public
 LINE 1: create table t3(c1 integer);
