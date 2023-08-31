@@ -364,7 +364,7 @@ DETAIL:  0 dead row versions cannot be removed yet.
 CPU: user: 0.88 s, system: 0.79 s, elapsed: 57.68 s.
 VACUUM
 
-Смотрим размер - сжало хорошо, почти чтолько же, как после начального INSERT (241033216)
+Смотрим размер - сжало хорошо, почти столько же, как после начального INSERT (241033216)
 postgres=# select pg_total_relation_size('toast_test');
  pg_total_relation_size
 ------------------------
