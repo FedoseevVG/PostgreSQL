@@ -180,7 +180,7 @@ postgres@pg01:/home/ubuntu$
 postgres=# CREATE TABLE toast_test (id SERIAL, value TEXT);
 CREATE TABLE
 
-Создадим вункцию для генерации строк заданной длины:
+Создадим функцию для генерации строк заданной длины:
 postgres=# CREATE OR REPLACE FUNCTION generate_random_string(
   length INTEGER,
   characters TEXT default '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
