@@ -364,21 +364,13 @@ DETAIL:  0 dead row versions cannot be removed yet.
 CPU: user: 0.88 s, system: 0.79 s, elapsed: 57.68 s.
 VACUUM
 
-Смотрим - показывает по прежнему, потому что забыли ANALYZE:
-postgres=# SELECT relname, n_live_tup, n_dead_tup, trunc(100*n_dead_tup/(n_live_tup+1))::float "ratio%", last_autovacuum FROM pg_stat_user_TABLEs WHERE relname = 'toast_test';
-  relname   | n_live_tup | n_dead_tup | ratio% |        last_autovacuum
-------------+------------+------------+--------+-------------------------------
- toast_test |    1000000 |    5999763 |    599 | 2023-08-30 19:04:08.278586+00
-(1 row)
-
-Смотри размер - сжало хорошо, почти чтолько же, как после начального INSERT (241033216)
+Смотрим размер - сжало хорошо, почти чтолько же, как после начального INSERT (241033216)
 postgres=# select pg_total_relation_size('toast_test');
  pg_total_relation_size
 ------------------------
               256008192
 (1 row)
 
-Делаем ANALYZE и получаем нормальную статистику:
 postgres=# ANALYZE toast_test;
 ANALYZE
 postgres=# SELECT relname, n_live_tup, n_dead_tup, trunc(100*n_dead_tup/(n_live_tup+1))::float "ratio%", last_autovacuum FROM pg_stat_user_TABLEs WHERE relname = 'toast_test';
@@ -387,6 +379,7 @@ postgres=# SELECT relname, n_live_tup, n_dead_tup, trunc(100*n_dead_tup/(n_live_
  toast_test |    1000000 |          0 |      0 | 2023-08-30 19:04:08.278586+00
 (1 row)
 
+Включаем обратно автовакуум:
 postgres=# ALTER TABLE toast_test  SET (autovacuum_enabled = on);
 ALTER TABLE
 postgres=# SELECT pg_size_pretty(pg_total_relation_size('toast_test'));
@@ -398,7 +391,7 @@ postgres=# SELECT pg_size_pretty(pg_total_relation_size('toast_test'));
 postgres=#
 ```
 
-## Задание - Написать анонимную процедуру, в которой в цикле 10 раз обновятся все строчки в искомой таблице. Не забыть вывести номер шага цикла.
+## Задание - написать анонимную процедуру, в которой в цикле 10 раз обновятся все строчки в искомой таблице, не забыть вывести номер шага цикла.
 
 ```bash
 Создадим новую таблицу со строкой меньшего размера, чем в предыдущем примере, вставим туда 1 млн. записей со строкой длиной 20 символов:
