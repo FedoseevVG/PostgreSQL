@@ -312,7 +312,6 @@ Checksums enabled in cluster
 ubuntu@pg01:~$ sudo systemctl start postgresql
 ubuntu@pg01:~$ sudo su postgres
 postgres@pg01:/home/ubuntu$ psql
-could not change directory to "/home/ubuntu": Permission denied
 psql (15.4 (Ubuntu 15.4-1.pgdg22.04+1))
 Type "help" for help.
 
@@ -366,7 +365,6 @@ ubuntu@pg01:~$
 ubuntu@pg01:~$ sudo systemctl start postgresql
 ubuntu@pg01:~$ sudo su postgres
 postgres@pg01:/home/ubuntu$ psql
-could not change directory to "/home/ubuntu": Permission denied
 psql (15.4 (Ubuntu 15.4-1.pgdg22.04+1))
 Type "help" for help.
 
