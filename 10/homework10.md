@@ -170,7 +170,7 @@ postgres=*# SELECT * FROM locks_v WHERE pid = 30642;
 
 Транзакция ожидает получение блокировки типа tuple для обновляемой строки. 
 
-Общую картину текущих ожиданий можно увидеть в представлении pg_stat_activity. Для удобства можно добавить и информацию о блокирующих процессах: 
+Общую картину текущих ожиданий можно увидеть в представлении pg_stat_activity:
 postgres=*# SELECT pid, wait_event_type, wait_event, pg_blocking_pids(pid)
 FROM pg_stat_activity
 WHERE backend_type = 'client backend';
