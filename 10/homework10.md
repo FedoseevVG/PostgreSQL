@@ -233,7 +233,8 @@ postgres=!#postgres=!# commit;
 ROLLBACK
 postgres=#
 
-Смотрим журнал событий БД, в котором появилось описание возникшей ситуации. Видим, что в ситуации можно разобраться постфактум, изучая журнал сообщений.
+Смотрим журнал событий БД, в котором появилось описание возникшей ситуации. Видим, что в ситуации можно разобраться 
+постфактум, изучая журнал сообщений.
 
 2023-09-04 19:33:23.596 UTC [30429] postgres@postgres LOG:  process 30429 detected deadlock while waiting for ShareLock on transaction 1574932 after 200.120 ms
 2023-09-04 19:33:23.596 UTC [30429] postgres@postgres DETAIL:  Process holding the lock: 30306. Wait queue: .
